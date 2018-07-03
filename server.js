@@ -26,11 +26,16 @@ app.use(cors());
 
 //================ End points ==========================
 
+// app.get('/', (req, res) => {
+// 	db.select('*').from('users').then(data => {
+// 		res.json(data);
+// 	});
+// })
+
 app.get('/', (req, res) => {
-	db.select('*').from('users').then(data => {
-		res.json(data);
-	});
+  res.send('App working!')
 })
+
 // signin function is returning another function
 app.post('/signin', signin.handleSignin(db, bcrypt))
 // dependency injection for db and bcrypt
